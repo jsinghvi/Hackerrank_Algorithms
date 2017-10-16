@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int[] a = new int[n];
+        int pos=0,neg=0,z=0;
+        for(int i=0;i<n;i++){
+            a[i] = scan.nextInt();
+            if(a[i]>0) pos++;
+            else if(a[i]<0) neg++;
+            else z++;
+        }
+        double noOfPositive = (double)pos/n;
+        double noOfNegative = (double)neg/n;
+        double noOfZero = (double)z/n;
+        System.out.println(noOfPositive);
+        System.out.println(noOfNegative);
+        System.out.println(noOfZero);
+    }
+}
