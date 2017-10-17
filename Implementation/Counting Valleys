@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int level=0;
+        int v=0;
+        int n = scan.nextInt();
+        //scan.nextLine();
+        String str = scan.next();
+        for(char c : str.toCharArray()){
+            if(c=='U') level++;
+            else level--;
+            if(level==0 && c=='U') v++;
+        }
+        System.out.println(v);
+    }
+}
