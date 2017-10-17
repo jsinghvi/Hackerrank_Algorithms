@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] a = new int[100];
+        for(int a_i=0; a_i < n; a_i++){
+            int temp = in.nextInt();
+            a[temp]++;
+        }
+        int max=0;
+        for(int i=0;i<n-1;i++){
+            if(a[i]+a[i+1]>max) max=a[i]+a[i+1];
+        }
+        System.out.println(max);
+    }
+}
