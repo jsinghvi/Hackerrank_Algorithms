@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int count=0,like=0,person=5;
+        while(n-->0){
+            like=person/2;
+            person=like*3;
+            count+=like;
+        }
+        System.out.println(count);
+    }
+}
