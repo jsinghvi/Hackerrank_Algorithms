@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static int reverse(int n){
+            int reverse = 0;
+         while( n != 0 )
+      {
+          reverse = reverse * 10;
+          reverse = reverse + n%10;
+          n = n/10;
+      }
+        return reverse;
+    }
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+        int j = scan.nextInt();
+        int k = scan.nextInt();
+        int count = 0;
+        for(int index = i;index<=j;index++){
+            int rev = reverse(index);
+            if(Math.abs(rev-index)%k==0) count++;
+        }
+        System.out.println(count);
+    }
+}
