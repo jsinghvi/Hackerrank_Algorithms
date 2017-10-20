@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = in.next();
+        String t = in.next();
+        int k = in.nextInt();
+        int j=0;
+        for(int i=0;i<java.lang.Math.min(t.length(),s.length());i++){
+            if(s.charAt(i)==t.charAt(i)) j++;
+            else break;
+        }
+        int diff = s.length()+t.length() - j*2;
+        System.out.println((diff<=k && diff%2==k%2) || s.length() + t.length() < k ? "Yes":"No");
+    }
+}
