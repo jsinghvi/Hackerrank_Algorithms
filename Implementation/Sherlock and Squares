@@ -1,0 +1,17 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int t = scan.nextInt();
+        while(t-->0){
+            int a = scan.nextInt();
+            int b = scan.nextInt();
+            double count=java.lang.Math.floor(java.lang.Math.sqrt(b))-java.lang.Math.ceil(java.lang.Math.sqrt(a))+1;
+            System.out.println((int)count);
+        }
+    }
+}
