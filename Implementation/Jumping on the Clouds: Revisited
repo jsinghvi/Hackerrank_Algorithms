@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int c[] = new int[n];
+        for(int c_i=0; c_i < n; c_i++){
+            c[c_i] = in.nextInt();
+        }
+        int E = 100,count=0;
+        int i=0;
+        i=(i+k)%n;
+        while(i<n){
+            if(c[i]==0){
+                E--;
+                //System.out.println(E);
+            }
+            else{
+                E-=3;
+                //System.out.println(E);
+            }
+            if(i==0) break;
+            i=(i+k)%n;
+            
+        }
+        System.out.println(E);
+    }
+}
