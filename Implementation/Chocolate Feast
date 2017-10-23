@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int t = scan.nextInt();
+        while(t-->0){
+            int n = scan.nextInt();
+            int c = scan.nextInt();
+            int m = scan.nextInt();
+            int total = 0, nwrap = 0, nchoc = 0;
+            nchoc = n/c;
+            total = nwrap = nchoc;
+            while(nwrap>=m){
+                nchoc = nwrap/m;
+                nwrap=nchoc+(nwrap%m);
+                total+=nchoc;
+            }
+            System.out.println(total);
+        }
+    }
+}
