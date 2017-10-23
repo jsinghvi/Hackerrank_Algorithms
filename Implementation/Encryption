@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        String st = scan.nextLine();
+        String s = st.replaceAll("\\s+","");
+        int L = s.length();
+        double x = java.lang.Math.sqrt(L);
+        double y = java.lang.Math.sqrt(L);
+        int r = (int)java.lang.Math.round(x);
+        int c = (int)java.lang.Math.ceil(y);
+        //int c = r+1;
+        char[][] arr = new char[r][c];
+        int k = -1;
+        int count=-1;
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                arr[i][j]=' ';
+            }
+        }
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                count++;
+                if(count==s.length()) break;
+                arr[i][j] = s.charAt(++k);
+            }
+        }
+        for(int i=0;i<c;i++){
+            for(int j=0;j<r;j++){
+                char ch = arr[j][i];
+                if(ch!=' ') System.out.print(ch);
+            }
+            System.out.print(" ");
+        }
+    }
+}
