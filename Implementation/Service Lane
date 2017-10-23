@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int t = scan.nextInt();
+        int[] width = new int[n];
+        for(int i=0;i<n;i++){
+            width[i] = scan.nextInt();
+        }
+        while(t-->0){
+            int start = scan.nextInt();
+            int last = scan.nextInt();
+            int min = 3;
+            for(int i=start;i<=last;i++){
+                if(width[i]<min) min=width[i];
+            }
+            System.out.println(min);
+        }
+    }
+}
