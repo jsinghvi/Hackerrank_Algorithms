@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int anagram(String s){
+        // Complete this function
+        if(s.length()%2!=0) return -1;
+        else{
+            String s1 = s.substring(0,(s.length()/2));
+            String s2 = s.substring(s.length()/2);
+              char[] char1 = s1.toCharArray();
+//            char[] char2 = s2.toCharArray();
+    //        Arrays.sort(char1);
+      //      Arrays.sort(char2);
+            int count=0;
+            for(char c : char1){
+                int index = s2.indexOf(c);
+                if(index==-1) count++;
+                else{
+                    s2 = s2.substring(0,index)+s2.substring(index+1);
+                }
+            }
+            return count;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int q = in.nextInt();
+        for(int a0 = 0; a0 < q; a0++){
+            String s = in.next();
+            int result = anagram(s);
+            System.out.println(result);
+        }
+    }
+}
