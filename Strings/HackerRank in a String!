@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int q = in.nextInt();
+        int i = 0, j = 0;
+        String word = "hackerrank";
+        for(int a0 = 0; a0 < q; a0++){
+            String s = in.next();
+            // your code goes here
+            if(s.length() < word.length()){
+                System.out.println("NO");
+                continue;
+            }
+            for(i=0,j=0;j<s.length();j++){
+                if(i < word.length() && s.charAt(j)==word.charAt(i)) i++;
+            }
+            if(i==word.length()) System.out.println("YES");
+            else System.out.println("NO");
+        }
+    }
+}
