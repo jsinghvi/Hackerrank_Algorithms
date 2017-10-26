@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        StringBuilder sb = new StringBuilder();
+        String str = scan.next();
+        int k = scan.nextInt();
+        for(int i=0;i<str.length();i++){
+                if(Character.isUpperCase(str.charAt(i))){
+                    char ch = (char)(((int)str.charAt(i) + k - 65) % 26 + 65);
+                    sb.append(ch);
+                }
+                else if(Character.isLowerCase(str.charAt(i))){
+                    char ch = (char)(((int)str.charAt(i) + k - 97) % 26 + 97);
+                    sb.append(ch);
+                }
+            else{
+                sb.append(str.charAt(i));
+            }
+        }
+        System.out.println(sb);
+    }
+}
