@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static String gameOfThrones(String s){
+        // Complete this function
+        Set<Character> set = new HashSet<>();
+        for(char c: s.toCharArray()){
+            if(set.contains(c)) set.remove(c);
+            else set.add(c);
+        }
+        if(set.size()<=1) return "YES";
+        else return "NO";
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = in.next();
+        String result = gameOfThrones(s);
+        System.out.println(result);
+    }
+}
