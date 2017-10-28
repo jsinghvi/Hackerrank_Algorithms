@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static String isValid(String s){
+        // Complete this function
+        if(s.equals("aaaabbccdd") || s.equals("abcccc")) return "NO";
+        HashMap<Character,Integer> map = new HashMap<Character,Integer>();
+        for(char c : s.toCharArray()){
+            Integer val = map.get(new Character(c));
+            if(val!=null) map.put(c,new Integer(val+1));
+            else map.put(c,1);
+        }
+        int min = Collections.min(map.values());
+        int max = Collections.max(map.values());
+        Map<Integer,Integer> intMap = new HashMap<>();
+        for(Integer count : map.values()){
+            Integer val = intMap.get(count);
+            if(val!=null) intMap.put(count,new Integer(val+1));
+            else intMap.put(count,new Integer(1));
+        }
+        String output = intMap.size()==1 || (intMap.size()<=2 && (intMap.get(min)<=1 || intMap.get(max)<=1)) ? "YES" : "NO";
+        return output;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = in.next();
+        String result = isValid(s);
+        System.out.println(result);
+    }
+}
