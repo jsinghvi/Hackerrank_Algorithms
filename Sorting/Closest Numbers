@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] ar = new int[n];
+        for(int i=0;i<n;i++){
+            ar[i]=in.nextInt();
+        }
+        Arrays.sort(ar);
+        int id=0;
+        int min = Integer.MAX_VALUE;
+        for(int i=1;i<n;i++){
+            int tempDiff = Math.abs(ar[i]-ar[i-1]);
+            if(min>tempDiff){
+                id=i-1;
+                min=tempDiff;
+        }
+        }
+        for(int i=id;i<n-1;i++){
+            if(min==Math.abs(ar[i]-ar[i+1])){
+                System.out.print(ar[i] + " " + ar[i+1] + " ");
+            }
+        }
+    }
+}
