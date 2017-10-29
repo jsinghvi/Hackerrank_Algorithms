@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int[] ar = new int[n];
+        for(int i=0;i<n;i++) ar[i]=scan.nextInt();
+        int center = ar[0];
+        ArrayList<Integer> left = new ArrayList<Integer>();
+        ArrayList<Integer> right = new ArrayList<Integer>();
+        for(int i=1;i<n;i++){
+            if(ar[i]>=center) right.add(ar[i]);
+            else left.add(ar[i]);
+        }
+        Iterator itr = left.iterator();
+        while(itr.hasNext()){
+            System.out.print(itr.next() + " ");
+        }
+        System.out.print(center);
+        itr = right.iterator();
+        while(itr.hasNext()){
+            System.out.print(" " + itr.next());
+        }
+    }
+}
