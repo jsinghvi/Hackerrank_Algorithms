@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int trips = scan.nextInt();
+
+        for(int i=0;i<trips;i++) {
+            int money = scan.nextInt();
+            int flavors = scan.nextInt();
+            int[] prices = new int[flavors];
+            for (int j=0;j<flavors;j++) {
+                prices[j] = scan.nextInt();
+            }
+            HashMap<Integer, Integer> possibleSolutions = new HashMap<Integer, Integer>(flavors/2);
+            // Key = price that will solve the problem, Value = the flavor id (base 0) having money-neededPrice
+            for (int k=0;k<flavors;k++) {
+                if (prices[k]<money) {
+                    if (possibleSolutions.containsKey(prices[k])) { // solution found
+                        System.out.println((possibleSolutions.get(prices[k])+1)+" "+(k+1));
+                        break;
+                    } else { // add as possible solution
+                        possibleSolutions.put(money-prices[k], k);
+                    }
+                }
+            }
+        }
+        
+    }
+}
