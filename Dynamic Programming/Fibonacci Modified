@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner scn = new Scanner(System.in);
+    BigInteger t1 = new BigInteger(scn.nextInt()+"");
+    BigInteger t2 = new BigInteger(scn.nextInt()+"");
+    int n = scn.nextInt();
+
+    BigInteger t3 = new BigInteger("0");
+    for(int i=3;i<=n;i++){
+        t3 = t2;
+        t2 = t2.multiply(t2);
+        t2 = t2.add(t1);
+        t1 = t3;
+    }
+    System.out.println(t2);
+
+    }
+}
