@@ -2,3 +2,4 @@
 
 Simply copy paste the code in the HackerRank IDE and run.
 Make appropriate changes if running on a local environment. 
+Open an issue to report any bugs. 
